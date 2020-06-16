@@ -35,7 +35,8 @@ ifneq ($(shell $(LD) --help 2| grep -- --as-needed), )
 	LDFLAGS+= -Wl,--as-needed
 endif
 LDSTATIC=-static
-LIBS+=-llshw -lresolv
+#LIBS+=-llshw -lresolv
+LIBS+=-llshw -landroid-glob
 ifeq ($(SQLITE), 1)
 	LIBS+= $(shell pkg-config --libs sqlite3)
 endif

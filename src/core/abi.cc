@@ -21,7 +21,9 @@ bool scan_abi(hwNode & system)
 {
   // are we compiled as 32- or 64-bit process ?
   long sc = sysconf(LONG_BIT);
+#ifdef _SC_LONG_BIT
   if(sc==-1) sc = sysconf(_SC_LONG_BIT);
+#endif
   if(sc!=-1) system.setWidth(sc);
 
   pushd(PROC_SYS);

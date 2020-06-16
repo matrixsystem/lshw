@@ -33,6 +33,7 @@ const char *getpackageversion()
 
 static char *txtquery(const char *name, const char *domain, unsigned int *ttl)
 {
+#if 0
   unsigned char answer[PACKETSZ], *pt;
   char host[128], *txt;
   int len, exp, cttl, size, txtlen, type;
@@ -81,8 +82,8 @@ static char *txtquery(const char *name, const char *domain, unsigned int *ttl)
   pt++;
   strncpy(txt, (char*)pt, txtlen);
   txt[txtlen] = 0;
-
-  return txt;
+#endif
+  return NULL;
 }
 
 const char * checkupdates()
